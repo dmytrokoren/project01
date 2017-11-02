@@ -12,6 +12,7 @@
         <selenium.version>3.6.0</selenium.version>
         <testng.version>6.11</testng.version>
         <junit.version>4.12</junit.version>
+        <browser.mngr>1.7.2</browser.mngr>
     </properties>
 
     <dependencies>
@@ -34,6 +35,12 @@
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${browser.mngr}</version>
         </dependency>
 
     </dependencies>
