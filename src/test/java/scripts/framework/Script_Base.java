@@ -44,9 +44,10 @@ public class Script_Base {
         // driver.manage().window().maximize();
 
         // Newsletter
-        WebElement newsletterPopup = null;
+
+        WebDriver newsletterPopup = null;
         try {
-            newsletterPopup = getWhenVisible(By.cssSelector("#generic-modal"),5);
+            newsletterPopup = driver.switchTo().frame(driver.findElement(By.cssSelector("#generic-modal > iframe")));
         }
         catch(Exception ex){
             System.out.println(ex.getMessage());
@@ -54,7 +55,7 @@ public class Script_Base {
         }
 
         if(newsletterPopup != null) {
-            WebElement popupClose = getWhenVisible(By.xpath(".//*[@id='close-button']"),5);
+            WebElement popupClose = driver.findElement(By.xpath("//*[@id='close-button']"));
             popupClose.click();
             System.out.println("Continue script...");
         }

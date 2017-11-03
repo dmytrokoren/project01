@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import scripts.framework.Script_Base;
+import scripts.framework.WebElementUtils;
 
 /**
  * Created by dkorenkov on 11/2/2017.
@@ -12,7 +13,18 @@ import scripts.framework.Script_Base;
 public class practiceHere extends Script_Base {
 
     @Test
-    public void invalidEmail() {
+    public void accountRegistration() {
+
+        WebElement accountLinkMenu = driver.findElement(By.cssSelector(".menu-item .account"));
+        WebElementUtils.getInstance().mouseHoverJScript(driver,accountLinkMenu);
+
+        WebElement signinBtn = getWhenVisible(By.cssSelector(".menu-item .first-child.last-child>a"),5);
+        signinBtn.click();
+
+        WebElement emailTextbox = driver.findElement(By.cssSelector("#email-sign-in"));
+        emailTextbox.sendKeys("dmytro@gmail.com");
+
+        delayFor(5000);
 
 //        WebElement emailTextbox = driver.findElement(By.cssSelector("#email-sign-in"));
 //        emailTextbox.sendKeys("dmytro@gmail.com");
